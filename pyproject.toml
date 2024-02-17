@@ -1,7 +1,19 @@
-[tool.commitizen]
-name = "cz_conventional_commits"
-tag_format = "$version"
-version_scheme = "pep440"
-version_provider = "pep621"
-update_changelog_on_bump = true
-major_version_zero = true
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gameOfLife"
+dynamic = ["version"]
+description = "Conway's Game of Life in your terminal"
+readme = "README.md"
+authors = [{ name = "Nate Ledrich", email = "nathanael.ledrich@icloud.com" }]
+dependencies = [
+    'tomli; python_version < "3.11"',
+]
+
+[project.scripts]
+gameOfLife = "gameOfLife.__main__:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "gameOfLife.__version__" }

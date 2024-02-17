@@ -10,8 +10,8 @@ def main():
     if args.all:
         for pattern in patterns.get_all_patterns():
             _show_pattern(view, pattern, args)
-        else:
-            _show_pattern(view, patterns.get_pattern(name=args.pattern), args)
+    else:
+        _show_pattern(view, patterns.get_pattern(name=args.pattern), args)
 
 
 def _show_pattern(view, pattern, args):
