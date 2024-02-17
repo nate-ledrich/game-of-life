@@ -1,3 +1,5 @@
 .venv/
 .idea/
 /gameOfLife/__pycache__/
+/venv/
+/gameOfLife.egg-info/
